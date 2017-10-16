@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        
+        <title>Loja de Calçados ADS</title>
+        
+        <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+        <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css}" rel="stylesheet"/>
+    </head>
+    
+    <body>
+        <div class="panel panel-default" style="margin: 10px">
+            <div class="panel-heading">
+                <h1 class="panel-title">Lista de Calçados</h1>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome do Calçado</th>
+                            <th>Coleção</th>
+                            <th>Menor Tamanho</th>
+                            <th>Maior Tamanho</th>
+                            <th>Cor</th>
+                            <th>Preço de Custo (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="calcado : ${calcados}">
+                            <td th:text="${calcado.nomeDoCalcado}"></td>
+                            <td th:text="${calcado.colecao}"></td>
+                            <td th:text="${calcado.menorTamanho}"></td>
+                            <td th:text="${calcado.maiorTamanho}"></td>
+                            <td th:text="${calcado.corDoCalcado}"></td>
+                            <td th:text="${calcado.precoDeCusto}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
